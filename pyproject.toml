@@ -12,6 +12,9 @@ setuptools = "^69.0.3"
 Django = "^5.0.2"
 python-dotenv = "^1.0.1"
 pre-commit = "^3.6.1"
+flake8 = "^7.0.0"
+black = "^24.1.1"
+isort = "^5.13.2"
 
 
 [build-system]
