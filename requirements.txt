@@ -5,9 +5,12 @@ click==8.1.7
 colorama==0.4.6
 distlib==0.3.8
 Django==5.0.2
+djangorestframework==3.14.0
+drf-yasg==1.21.7
 filelock==3.13.1
 flake8==7.0.0
 identify==2.5.34
+inflection==0.5.1
 isort==5.13.2
 mccabe==0.7.0
 mypy-extensions==1.0.0
@@ -20,8 +23,10 @@ psycopg2==2.9.9
 pycodestyle==2.11.1
 pyflakes==3.2.0
 python-dotenv==1.0.1
+pytz==2024.1
 PyYAML==6.0.1
 setuptools==69.0.3
 sqlparse==0.4.4
 tzdata==2023.4
+uritemplate==4.1.1
 virtualenv==20.25.0

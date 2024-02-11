@@ -1,5 +1,10 @@
+from django.urls import path
+
 from .apps import FilesConfig
+from .views import FileCreate
 
 app_name = FilesConfig.name
 
-urlpatterns = []
+urlpatterns = [
+    path("upload/", FileCreate.as_view()),
+]
