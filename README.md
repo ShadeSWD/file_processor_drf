@@ -1,2 +1,50 @@
-# file_processor_drf
-Django REST API that allows you to upload files to the server and then process them asynchronously using Celery.
+# Загрузка и обработка файлов
+
+``Django REST API``, который позволяет загружать файлы на сервер, а затем асинхронно обрабатывать их с использованием ``Celery``.
+
+**Основные задачи:**
+
+- [ ] Модель ``file``
+- [ ] Сериализатор модели ``file``
+- [ ] Эндпоинт ``upload/`` для загрузки файлов
+- [ ] ``Celery`` задача для обработки файла
+- [ ] Эндпоинт ``files`` для получения данных загруженных файлов
+
+**Задачи "CI/CD":**
+
+- [ ] Тесты
+- [ ] docker
+- [x] Базовый CI/CD
+
+**Запуск проекта:**
+
+* Склонируйте репозиторий:
+    ```bash
+    git clone https://github.com/ShadeSWD/file_processor_drf.git
+    ```
+* Установите пакетный менеджер poetry:
+    ```bash
+    pip install poetry
+    ```
+* Создайте базу данных в ``PostgreSQL`` и заполните файл ``.env``, воспользовавшись ``.env.sample``
+* Перейдите в папку с проектом и настройте виртуальное окружение
+    ```bash
+    poetry install
+    ```
+* Войдите в виртуальное окружение
+    ```bash
+    poetry shell
+    ```
+* Накатите миграции:
+  ```bash
+  manage.py migrate
+  ```
+* Запустите сервер:
+    ```bash
+    manage.py runserver
+    ```
+* Перед первым коммитом необходимо выполнить
+  ```bash
+  pre-commit install
+  ```
+  для автоматического выполнения проверок перед коммитами
