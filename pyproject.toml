@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "file-processor-drf"
+version = "0.1.0"
+description = "Django REST API that allows you to upload files to the server and then process them asynchronously using Celery."
+authors = ["ShadeSWD <seawolfy60@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+setuptools = "^69.0.3"
+Django = "^5.0.2"
+python-dotenv = "^1.0.1"
+pre-commit = "^3.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
