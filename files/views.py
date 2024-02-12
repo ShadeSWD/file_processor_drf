@@ -1,5 +1,5 @@
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.decorators import action
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
@@ -23,4 +23,9 @@ class FileCreate(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         instance = self.perform_create(serializer)
         instance_serializer = FileSerializerRetrieve(instance)
-        return Response(instance_serializer.data)
+        return Response(instance_serializer.data, status=status.HTTP_201_CREATED)
+
+
+class FileList(generics.ListAPIView):
+    queryset = File.objects.all()
+    serializer_class = FileSerializerRetrieve
