@@ -1,3 +1,4 @@
+from django.views import generic
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import generics, status
 from rest_framework.decorators import action
@@ -7,6 +8,10 @@ from rest_framework.response import Response
 from .models import File
 from .serializers import FileSerializerCreate, FileSerializerRetrieve
 from .tasks import process_file
+
+
+class HomeView(generic.TemplateView):
+    template_name = "home.html"
 
 
 class FileCreate(generics.CreateAPIView):

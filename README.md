@@ -51,6 +51,7 @@
   ```bash
   celery -A config worker --loglevel=info -P eventlet
   ```
+* Домашняя страница будет доступна по адресу вашего хоста
 * Перед первым коммитом необходимо выполнить
   ```bash
   pre-commit install
