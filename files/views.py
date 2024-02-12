@@ -6,6 +6,7 @@ from rest_framework.response import Response
 
 from .models import File
 from .serializers import FileSerializerCreate, FileSerializerRetrieve
+from .tasks import process_file
 
 
 class FileCreate(generics.CreateAPIView):
@@ -23,6 +24,7 @@ class FileCreate(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         instance = self.perform_create(serializer)
         instance_serializer = FileSerializerRetrieve(instance)
+        process_file.delay(instance.pk)
         return Response(instance_serializer.data, status=status.HTTP_201_CREATED)
 
 

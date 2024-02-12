@@ -131,3 +131,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# cache
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.getenv("REDIS_LOCATION"),
+    }
+}
+
+# Celery broker settings
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_HOST")
+CELERY_RESULT_BACKEND = os.getenv("CELERY_BROKER_HOST")
+
+CELERY_TASK_TRACK_STARTED = True
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TASK_SERIALIZER = "json"
+CELERY_TIMEZONE = "Europe/Moscow"
