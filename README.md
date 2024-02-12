@@ -13,7 +13,7 @@
 **Задачи "CI/CD":**
 
 - [x] Тесты
-- [ ] docker
+- [x] docker
 - [x] Базовый CI/CD - проверка кода линтерами (``flake8``) и форматерами (``black``, ``isort``)
 
 **Запуск проекта:**
@@ -100,3 +100,20 @@
   coverage run --source='.' manage.py test
   coverage report
   ```
+
+### Контейнеризация (docker)
+Для запуска приложения с помощью ``docker``:
+* Склонируйте репозиторий:
+    ```bash
+    git clone https://github.com/ShadeSWD/file_processor_drf.git
+    ```
+* перейдите в корневой каталог ``file_processor_drf``
+* Выполните сборку образов
+  ```bash
+  docker-compose build
+  ```
+* Запустите контейнер
+  ```bash
+  docker-compose up
+  ```
+* Приложение будет доступно по адресу ``http://localhost:7777/``
