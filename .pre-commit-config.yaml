@@ -1,13 +1,5 @@
 exclude: .*migrations\/.*
 repos:
-#  - repo: local
-#    hooks:
-#      - id: pytest
-#        name: pytest
-#        language: system
-#        entry: pytest
-#        pass_filenames: false
-#        always_run: true
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
@@ -29,5 +21,5 @@ repos:
     rev: 23.3.0
     hooks:
       - id: black
-        exclude: migrations
+        exclude: 'tests|env|docs'
         args: [ --check,--config=pyproject.toml ]
